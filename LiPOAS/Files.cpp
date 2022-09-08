@@ -121,18 +121,14 @@ void FileWriteData(vector <string>& text) {
 	bool fileCorrectCheck = 0;
 	bool fileOpenCheck = 0;
 	cout << endl << "Введите путь к файлу:" << endl;
-	SetConsoleCP(1251);
 	cin >> path;
-	SetConsoleCP(866);
 	readOnlyCheck = ReadOnlyChecking(path);
 	fileCorrectCheck = FileCorrectChecking(path);
 	fileOpenCheck = FileOpenChecking(path);
 	while ((readOnlyCheck == false) || (fileCorrectCheck == false) || (fileOpenCheck == false)) { // Проверка корректности файла
 		cout << "Ошибка открытия файла. Пожалуйста попробуйте еще раз." << endl;
 		cout << "Введите путь к файлу:" << endl;
-		SetConsoleCP(1251);
 		cin >> path;
-		SetConsoleCP(866);
 		readOnlyCheck = ReadOnlyChecking(path);
 		fileCorrectCheck = FileCorrectChecking(path);
 		fileOpenCheck = FileOpenChecking(path);
@@ -147,18 +143,14 @@ void FileWriteData(vector <string>& text) {
 		}
 		else { // Отказ от перезаписи и выбор другого пути к файлу
 			cout << "Введите путь к файлу:" << endl;
-			SetConsoleCP(1251);
 			cin >> path;
-			SetConsoleCP(866);
 			readOnlyCheck = ReadOnlyChecking(path);
 			fileCorrectCheck = FileCorrectChecking(path);
 			fileOpenCheck = FileOpenChecking(path);
 			while ((readOnlyCheck == false) || (fileCorrectCheck == false) || (fileOpenCheck == false)) { // Проверка корректности файла
 				cout << "Ошибка открытия файла. Пожалуйста попробуйте еще раз." << endl;
 				cout << "Введите путь к файлу:" << endl;
-				SetConsoleCP(1251);
 				cin >> path;
-				SetConsoleCP(866);
 				readOnlyCheck = ReadOnlyChecking(path);
 				fileCorrectCheck = FileCorrectChecking(path);
 				fileOpenCheck = FileOpenChecking(path);
@@ -169,25 +161,20 @@ void FileWriteData(vector <string>& text) {
 				}
 				else {
 					cout << "Введите путь к файлу:" << endl;
-					SetConsoleCP(1251);
 					cin >> path;
-					SetConsoleCP(866);
 					readOnlyCheck = ReadOnlyChecking(path);
 					fileCorrectCheck = FileCorrectChecking(path);
 					fileOpenCheck = FileOpenChecking(path);
 					while ((readOnlyCheck == false) || (fileCorrectCheck == false) || (fileOpenCheck == false)) { // Проверка корректности файла
 						cout << "Ошибка открытия файла. Пожалуйста попробуйте еще раз." << endl;
 						cout << "Введите путь к файлу:" << endl;
-						SetConsoleCP(1251);
 						cin >> path;
-						SetConsoleCP(866);
 						readOnlyCheck = ReadOnlyChecking(path);
 						fileCorrectCheck = FileCorrectChecking(path);
 						fileOpenCheck = FileOpenChecking(path);
 					}
 				}
 			}
-			SetConsoleCP(866);
 			fout.open(path);
 			// Вывод исходных данных в файл
 			for (i = 0; i < text.size(); i++) {

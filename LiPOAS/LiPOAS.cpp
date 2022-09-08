@@ -12,16 +12,13 @@ vector<string> textInputFile(vector<string> text)
 	int fileReadCorrectCheck = 0;
 	cout << "Введите путь к файлу:" << endl;
 	string path;
-	SetConsoleCP(1251);
 	cin >> path;
-	SetConsoleCP(866);
+
 	fileReadCorrectCheck = FileReadCorrectChecking(path);
 	while (fileReadCorrectCheck == false) { // Проверка корректности файла
 		cout << "Ошибка открытия файла. Пожалуйста попробуйте еще раз." << endl;
 		cout << "Введите путь к файлу:" << endl;
-		SetConsoleCP(1251);
 		cin >> path;
-		SetConsoleCP(866);
 		fileReadCorrectCheck = FileReadCorrectChecking(path);
 	}
 	string buffer = "\0";
@@ -34,16 +31,12 @@ vector<string> textInputFile(vector<string> text)
 	while (text.size() == 0) {
 		cout << "Данный файл не содержит текст. Пожалуйста попробуйте еще раз." << endl;
 		cout << "Введите путь к файлу:" << endl;
-		SetConsoleCP(1251);
 		cin >> path;
-		SetConsoleCP(866);
 		fileReadCorrectCheck = FileReadCorrectChecking(path);
 		while (fileReadCorrectCheck == false) { // Проверка корректности файла
 			cout << "Ошибка открытия файла. Пожалуйста попробуйте еще раз." << endl;
 			cout << "Введите путь к файлу:" << endl;
-			SetConsoleCP(1251);
 			cin >> path;
-			SetConsoleCP(866);
 			fileReadCorrectCheck = FileReadCorrectChecking(path);
 		}
 		buffer = "\0";
@@ -62,7 +55,6 @@ vector<string> textInputManual(vector<string> text)
 	cout << "Введите текст:" << endl;
 	cout << "Чтобы завершить ввод текста, нажмите Enter дважды." << endl;
 	string buffer = "\0";
-	SetConsoleCP(1251);
 	bool firstTry = true;
 	while (true) {
 		getline(cin, buffer);
@@ -73,18 +65,15 @@ vector<string> textInputManual(vector<string> text)
 				if (firstTry == true)
 					firstTry = false;
 				else {
-					SetConsoleCP(866);
 					cout << "Вы не ввели текст. Пожалуйста, попробуйте еще раз." << endl;
 					cout << "Введите текст:" << endl;
 					cout << "Чтобы завершить ввод текста, нажмите Enter дважды." << endl;
-					SetConsoleCP(1251);
 				}
 			}
 			else
 				break;
 		}
 	}
-	SetConsoleCP(866);
 	return text;
 }
 
@@ -94,11 +83,9 @@ int main()
     setlocale(LC_ALL, "RU");
     Greeting();
     Testing();
+	SetConsoleCP(1251);
 	while (true) {
 		vector<string> text;
-		int textChoice;
-		int choiceOne = 1;
-		int choiceTwo = 2;
 		if (MenuImportData() == true) { // Проверка происхождения исходных данных
 			text = textInputFile(text);
 			cout << endl << "Полученный из файла текст:" << endl;

@@ -1,8 +1,9 @@
 ﻿#pragma once
 #include <iostream>
+#include "Testing.h"
 using namespace std;
 
-int NumInInt();
+int NumInInt(); // Проверка ввода целочисленных значений
 void Greeting(); // Приветствие
 bool Menu(); // Основное Меню
 bool MenuResult(); // Меню сохранения результата программы в файл

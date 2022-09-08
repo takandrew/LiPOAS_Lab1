@@ -2,7 +2,8 @@
 
 vector<string> printEveryCharUsageNum(map <char, int> gotMap)
 {
-	if (gotMap.size() == 1)
+    int minSizeOfEmptiness = 1;
+	if (gotMap.size() == minSizeOfEmptiness)
 	{
         if (gotMap.find('e') != gotMap.end())
         {
@@ -33,7 +34,8 @@ vector<string> printEveryCharUsageNum(map <char, int> gotMap)
 map <char, int> getEveryCharUsageNum(vector<string> gotStr) {
     if (gotStr.empty())
     {
-        map <char, int> emptyMap = { {'e',0} };
+        int indicatorOfEmptyInput = 0;
+        map <char, int> emptyMap = { {'e',indicatorOfEmptyInput} };
         return emptyMap;
     }
     map <char, int> charInGotStr;
