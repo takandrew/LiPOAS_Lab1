@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <vector>
 using namespace std;
 
-void printEveryCharUsageNum(map <char, int> gotMap);
-map <char, int> getEveryCharUsageNum(string gotStr);
+vector<string> printEveryCharUsageNum(map <char, int> gotMap);
+map <char, int> getEveryCharUsageNum(vector<string> gotStr);

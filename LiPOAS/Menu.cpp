@@ -1,4 +1,5 @@
 ﻿#include "Menu.h"
+#include "Testing.h"
 
 int NumInInt() {
 	int variable;
@@ -75,7 +76,7 @@ bool MenuExportData() {
 	}
 }
 
-// Меню выбора происхождения исходных данных 
+// Меню выбора расположения исходных данных 
 bool MenuImportData() {
 	enum MenuImportDataCase { Yes = 1, No };
 	int variant;
@@ -106,41 +107,5 @@ bool MenuReWrite() {
 	case ReWrite: return true;
 	case SeekClear: return false;
 	default: {cout << "Введено неправильное значение." << endl; return MenuReWrite(); }
-	}
-}
-
-// Меню вариантов работы с текстом
-int MenuTextWork() {
-	enum MenuTextWorkCase { DelFromBeg = 1, DelFromEnd, ReplaceFirstSmalltoCapital };
-	int variant;
-	cout << endl;
-	cout << "Выберите необходимое действие:" << endl;
-	cout << "1. Удалить символы с начала заданной строки." << endl;
-	cout << "2. Удалить символы с конца заданной строки." << endl;
-	cout << "3. Заменить все первые строчные буквы слов прописными." << endl;
-	cout << endl;
-	variant = NumInInt();
-	switch (variant) {
-	case DelFromBeg: return DelFromBeg;
-	case DelFromEnd: return DelFromEnd;
-	case ReplaceFirstSmalltoCapital: return ReplaceFirstSmalltoCapital;
-	default: {cout << "Введено неправильное значение." << endl; return MenuTextWork(); }
-	}
-}
-
-// Меню выбора продолжения работы с текстом
-bool MenuTextWorkSelect() {
-	enum MenuTextWorkSelectCase { Yes = 1, No };
-	int variant;
-	cout << endl;
-	cout << "Выберите необходимое действие:" << endl;
-	cout << "1. Продолжить работу с текстом." << endl;
-	cout << "2. Закончить работу с текстом." << endl;
-	cout << endl;
-	variant = NumInInt();
-	switch (variant) {
-	case Yes: return true;
-	case No: return false;
-	default: {cout << "Введено неправильное значение." << endl; return MenuTextWorkSelect(); }
 	}
 }
